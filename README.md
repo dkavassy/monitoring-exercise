@@ -5,8 +5,11 @@ Simple monitoring service
 
 Run webserver instances:
 `FLASK_APP=webserver.py python -m flask run --port 2000`
+
 `FLASK_APP=webserver.py python -m flask run --port 3000`
+
 `FLASK_APP=webserver.py python -m flask run --port 4000`
+
 `FLASK_APP=webserver.py python -m flask run --port 5000`
 
 Run the request generator
@@ -16,6 +19,7 @@ Run the request generator
 Run the monitoring service:
 
 `go build monitoring.go`
+
 `./monitoring --interval 5 --targets
 localhost:5000,localhost:4000,localhost:3000,localhost:2000 --metrics
 requests,errors`
@@ -28,6 +32,6 @@ Main areas lacking:
 
 ## Directory structure
 
-server/ - instrumented web server
-client/ - monitoring service
-request.sh - request generator
+  - server/ - instrumented web server
+  - client/ - monitoring service
+  - request.sh - request generator
